@@ -52,7 +52,7 @@ class App extends Component {
             <div className="tc">
                 <h1 className='f1'>Robofriends</h1>
                 <h2 className='f3 thelas, georgia, serif'><a href= "https://github.com/DotmanL"
-                style={{ textDecoration: 'underline', color: 'yellow'}}>My Github</a></h2>
+                style={{ textDecoration: 'none', color: 'yellow'}}>My Github</a></h2>
                 <SearchBox searchChange={onSearchChange} />
                 <Scroll>
                     <ErrorBoundary>
