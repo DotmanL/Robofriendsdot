@@ -6,6 +6,7 @@ import Scroll from '../components/Scroll';
 import './App.css';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { setSearchField, requestRobots } from '../actions';
+import Header from '../components/Header';
 
 const mapStateToProps = state => {
     return {
@@ -24,14 +25,13 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 class App extends Component {
-   /* constructor() {
+   constructor() {
         super ()
         this.state = {
-            robots: [],
-           // searchfield: ''
+            count: 1
 
         }
-    } */
+    } 
 
     componentDidMount(){
         this.props.onRequestRobots();
@@ -46,13 +46,9 @@ class App extends Component {
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
         })
 
-        return isPending ?
-        <h1>Loading</h1>:
-        (
+        return (
             <div className="tc">
-                <h1 className='f1'>Robofriends</h1>
-                <h2 className='f3 thelas, georgia, serif'><a href= "https://github.com/DotmanL"
-                style={{ textDecoration: 'none', color: 'yellow'}}>My Github</a></h2>
+                <Header count={this.state.count}/>
                 <SearchBox searchChange={onSearchChange} />
                 <Scroll>
                     <ErrorBoundary>
